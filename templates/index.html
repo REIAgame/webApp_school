@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html to pdf（htmlでpdfを作る）</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    
+    <script src="static/js/createPDF.js"></script>
+    <script src="static/js/menuList.js"></script>
+    <script src="static/js/table.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>html to pdf（htmlでpdfを作る）</h1>
+        <p>メニューから挿入したいものを選びPDFを作成することができます。</p>
+    </header>
+    <article>
+        <nav>
+            <ul id="menu">
+                <li>見出し</li><br>
+                <li>段落</li><br>
+                <li>メニュー</li><br>
+                <li>表</li><br>
+                <li>画像</li><br>
+            </ul>
+        </nav>
+        <div id="pdf">
+            {% if pdf %}
+                {{pdf}}
+            {% endif %}
+        </div>
+        <button id="completed">pdfクリエイト</button>
+        <textarea id="html" placeholder="あなたの独自コードでpdfを作成する"></textarea>
+    </article>
+    <form action="" id="imageForm" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="getImage" accept="image/*" hidden>
+        <input type="text" name="pdf" id="getPdf" hidden>
+    </form>
+    <footer></footer>
+</body>
+</html>

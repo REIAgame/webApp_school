@@ -1,0 +1,29 @@
+nav{
+    float:right;
+}
+nav ul li{
+    display: block;
+    width: 100px;
+    height: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(208, 255, 0, 0.658);
+    background:white;
+}
+nav ul li:hover{
+    background:rgba(0,0,0,0.2)
+}
+#pdf{
+    position: relative;
+    border:1px solid black;
+    height:100px;
+    width:50%;
+}
+#completed{
+    clear:both;
+}
+#html{
+    clear:both;
+}
+table{
+    border-collapse: collapse;
+}
