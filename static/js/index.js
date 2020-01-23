@@ -79,7 +79,11 @@ window.onload=function(){
         }else{
             localStorage.setItem("pdf",this.pdf.innerHTML);
         }
-        window.open("tmp.html","_blank");
+        let data=new FormData();
+        data.append("pdf",localStorage.getItem("pdf"));
+        let xhr =new XMLHttpRequest();
+        xhr.open("POST",location.href+"completed");
+        xhr.send(data);
         
 
     }.bind(this);

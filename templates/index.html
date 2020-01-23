@@ -29,7 +29,8 @@
         </nav>
         <div id="pdf">
             {% if pdf %}
-                {{pdf}}
+                {{pdf | safe}}
+                {{img | safe}}
             {% endif %}
         </div>
         <button id="completed">pdfクリエイト</button>

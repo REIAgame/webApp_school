@@ -11,6 +11,7 @@ def image():
     value2=request.files["image"]
     filename=value2.filename
     value2.save("UPimage/"+filename)
+    return render_template("index.html",pdf=value,img='<img src="UPimage/'+filename+'">')
     
 def createPdf():
     pass
