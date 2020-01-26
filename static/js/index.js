@@ -84,6 +84,9 @@ window.onload=function(){
         let xhr =new XMLHttpRequest();
         xhr.open("POST",location.href+"completed");
         xhr.send(data);
+        xhr.onloadend=function(){
+            location.href=location.href+"completed";
+        }
         
 
     }.bind(this);
