@@ -1,5 +1,9 @@
 from flask import Flask,render_template,request,Blueprint
+import flask
 import os
+import pdfkit
+import pprint
+
 app=Flask(__name__)
 app.register_blueprint(Blueprint("UPimage",__name__,static_url_path="/UPimage",static_folder="./UPimage"))
 pdf=[""]
@@ -19,7 +23,13 @@ def createPdf():
         pdf[0]=request.form["pdf"]
         return ""
     else:
-        return render_template("tmp.html",pdf=pdf[0])
-    
+        return listStr(os.listdir())
+        # return render_template("tmp.html",pdf=pdf[0])
+def listStr(StringList:list):
+    target=os.listdir()
+    result=""
+    for i in target:
+        result=result+i+"<br>"
+    return result
 if __name__=="__main__":
-    app.run(host="127.0.0.1",port=3000)
+    
