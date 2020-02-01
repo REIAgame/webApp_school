@@ -12,4 +12,3 @@ USER root
 # More information: https://www.gitpod.io/docs/42_config_docker/
 RUN apt -y update && \
     apt -y install wkhtmltopdf && \
-    usermod -g root gitpod
