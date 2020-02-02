@@ -11,3 +11,4 @@ USER root
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
 
+RUN apt-get -y install wkhtmltopdf
