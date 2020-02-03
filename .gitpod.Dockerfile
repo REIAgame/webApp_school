@@ -10,5 +10,6 @@ USER root
 #     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
-
-
+RUN apt -y update && \
+    apt -y install chromium-browser && \
+    apt -y install fonts-ipafont-gothic fonts-ipafont-mincho
