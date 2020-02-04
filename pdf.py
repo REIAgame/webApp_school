@@ -26,6 +26,12 @@ def getScreenshot(url:str):
     driver=webdriver.Chrome(executable_path="/usr/bin/chromedriver",options=_options)
     driver.get(url)
     time.sleep(3)
+    #デバッグ
+    driver.add_cookie({"name":"user_session","value":"Nkol2HUYQ1-pNTst_hLG9eMtHz_s-HAla9CdPV-1Ux","domain":"github.com"})
+    driver.add_cookie({"name":"_gitpod_io_ws_c27d6d51-650e-481d-8163-9a2085f1b5aa_port_auth_","value":"ae02b11c-f281-4f56-8309-e5455188d7d2","domain":"gitpod.io"})
+    driver.add_cookie({"name":"_gitpod_io_ws_c5fa4079-a33f-4f64-865f-afa53876c06d_port_auth_","value":"bb82e227-8da8-4f35-a9f3-6c0fb9362a79","domain":"gitpod.io"})
+    #end
+    
     # element=driver.find_element_by_id("hplogo")
     # driver.execute_script("arguments[0].remove();",element)
     time.sleep(2)

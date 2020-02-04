@@ -6,9 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
+        window.onload=function(){
+            document.getElementById("save").onclick=function(){
+                let xhr=new XMLHttpRequest();
+                xhr.open("POST",location.href+"/save")
+                xhr.send(location.href);
+            }
+        }
     </script>
 </head>
 <body>
     {{pdf | safe}}
+    <button id="save">保存</button>
 </body>
 </html>
