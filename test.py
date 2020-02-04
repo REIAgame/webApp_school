@@ -3,13 +3,17 @@ from selenium import webdriver
 from selenium.webdriver.chrome import options
 import os
 osName=os.name
-_options.binary_location=""
-if osName =='nt':
-    _options.binary_location="drivers/win/chromium/chrome.exe"
-elif osName=='posix':
-    dirName='drivers/linux/'
-_options=options.Options()
+dirName:str
+ext:str
 
+if osName =='nt':
+   dirName="drivers/win/chromium/"
+   ext=".exe"
+elif osName=='posix':
+    dirName='drivers/linux/chrome-linux/'
+    ext=""
+_options=options.Options()
+_options.binary_location=dirName+"chrome"+ext
 _options.add_argument("--headless")
 _options.add_argument('disable-infobars')
 _options.add_argument('--no-sandbox')
