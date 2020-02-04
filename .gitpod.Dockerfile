@@ -11,5 +11,6 @@ USER root
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
 RUN apt -y update && \
+    apt -y install chromium-browser
     apt -y install fonts-ipafont-gothic fonts-ipafont-mincho && \
     apt -y install p7zip-full
