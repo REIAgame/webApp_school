@@ -1,6 +1,5 @@
 from flask import Flask,render_template,request,Blueprint
-
-import pdfkit
+from pdf import createPdf,getScreenshot
 import os
 
 import pprint
@@ -24,10 +23,12 @@ def createPdf():
         pdf[0]=request.form["pdf"]
         return ""
     else:
-        sendfi
-        pdfkit.from_file("templates/tmp.html","static/test.pdf")
-        return ""
-        # return render_template("tmp.html",pdf=pdf[0])
+        return render_template("tmp.html",pdf=pdf[0])
+@app.route("/completed/save",methods=["POST"])
+def save():
+    name=getScreenshot(request.get_data().decode())
+    createPdf(self,name)
+    return ""
 def listStr(StringList:list):
     target=os.listdir()
     result=""
@@ -35,4 +36,5 @@ def listStr(StringList:list):
         result=result+i+"<br>"
     return result
 if __name__=="__main__":
+    pprint.pprint(app.config)
     app.run("127.0.0.1",8000)
